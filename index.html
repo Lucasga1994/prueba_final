@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Viciarte</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lakki+Reddy&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header>
+
+    </header>
+
+    <section>
+
+    </section>
+
+    <script type="text/javascript">
+      var header= document.querySelector('header');
+
+
+      var rawbase = 'https://raw.githubusercontent.com/';
+      var jsonloc = 'pablotilli/lucas_aran/master/juegos.json';
+
+      var requestURL = rawbase + jsonloc;
+
+      var request=new XMLHttpRequest();
+
+      request.open('GET',requestURL);
+      request.responseType='json';
+      request.send();
+
+      request.onload = function(){
+
+        var games = request.response;
+
+        populateHeader(games);
+        juegos(games);
+
+      }
+
+      function populateHeader(jsonObj){
+        var myH1 = document.createElement('h1');
+
+        myH1.textContent= jsonObj.nombretitulo;
+
+        header.appendChild(myH1);
+
+        var myPara = document.createElement('p');
+        myPara.textContent = jsonObj.subtitulo;
+
+        header.appendChild(myPara);
+      }
+
+      function juegos(jsonobj){
+        
+        var section = document.querySelector('section');
+
+        var desarrolladoras = jsonobj['desarrolladoras'];
+
+        for(var i= 0; i < desarrolladoras.length; i++){
+
+          var  myArticle = document.createElement('article');
+
+          var myH2=document.createElement('h2');
+
+          var imagenDesarrolladora = document.createElement('img');
+
+          var myPara1 = document.createElement('p');
+          var myPara2 = document.createElement('p');
+          var myPara3 = document.createElement('p');
+          var myList  = document.createElement('ul');
+
+
+          myH2.textContent = desarrolladoras[i].nombre;
+
+
+          myPara2.textContent='Compatibilidad: ' + desarrolladoras[i].compatibilidad;
+          myPara3.textContent='juegos:';
+
+          var misjuegos = desarrolladoras[i].juegos;
+          
+          for (var j=0; j<misjuegos.length;j++ ){
+
+            var listitem=document.createElement('li');
+
+            listitem.textContent= misjuegos[j];
+
+            myList.appendChild(listitem);
+
+          }
+
+          myArticle.appendChild(myH2);
+
+
+          imagenDesarrolladora.setAttribute("src", desarrolladoras[i].logo ); 
+          
+          myArticle.appendChild(imagenDesarrolladora);
+
+          myArticle.appendChild(myPara2);
+          myArticle.appendChild(myList);
+
+          section.appendChild(myArticle)
+
+        }
+
+      }
+
+    </script>
+  </body>
+</html>

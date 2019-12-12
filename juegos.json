@@ -1,0 +1,55 @@
+{
+  "nombretitulo": "Viciarte",
+  "subtitulo": "Los mejores juegos de desarrolladoras",
+  
+  "desarrolladoras":[
+    { 
+      "nombre" : "Rockstar Game",
+      "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Rockstar_Games_Logo.svg/280px-Rockstar_Games_Logo.svg.png",
+      "compatibilidad" : [
+                            "Xbox", 
+                            "Playstation",
+                            "Nintendo",
+                            "Pc"
+                          ],
+      "juegos" :[
+                  "L.A Noire",
+                  "Red Read Redeptiom",
+                  "Bully Scolarship"
+                ]
+
+    },
+    { 
+      "nombre" : "Capcom",
+      "logo" : "https://images.mediotiempo.com/_Nqi1Mk6a9s_o1imFtebgMqF4eY=/958x596/uploads/media/2016/05/08/capcom-logo.jpg",
+      "compatibilidad" : [
+                            "Xbox", 
+                            "Playstation",
+                            "Nintendo",
+                            "Pc"
+                          ],
+      "juegos" :[
+                  "Marvel vs Capcom",
+                  "Resident Evil",
+                  "Dead Rising"
+                ]
+
+    },
+    { 
+      "nombre" : "Santa Monica",
+      "logo" : "http://www.masgamers.com/wp-content/uploads/2014/07/1406034680-sony-santa-monica-new-logo-630x354.jpg",
+      "compatibilidad" : [
+                            "Playstation"
+                         ],
+      "juegos" :[
+                  "God of war",
+                  "Fat Princess",
+                  "All star playstation battle royale"
+                ]
+
+    }    
+    
+    
+  ]
+
+}
